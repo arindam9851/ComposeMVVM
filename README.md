@@ -1,5 +1,5 @@
 # What is this project?
-This course will replace my old java mvvm introduction: [https://codingwithmitch.com/courses/rest-api-mvvm-retrofit2/](https://codingwithmitch.com/courses/rest-api-mvvm-retrofit2/).
+
 
 **This is a beginner course.**
 
