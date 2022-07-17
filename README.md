@@ -1,5 +1,6 @@
 # What is this project?
 
+Thanks to Mitch (https://www.youtube.com/c/CodingWithMitch)
 
 **This is a beginner course.**
 
