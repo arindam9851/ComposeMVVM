@@ -3,7 +3,7 @@ package com.jetpackcomposeexample.network.model
 import com.jetpackcomposeexample.domain.model.Recipe
 import com.jetpackcomposeexample.domain.util.DomainMapper
 
-class RecipeDtoMapper: DomainMapper<RecipeDto, Recipe> {
+class RecipeDtoMapper : DomainMapper<RecipeDto, Recipe> {
     override fun mapToDomainModel(model: RecipeDto): Recipe {
         return Recipe(
             id = model.pk,
@@ -35,11 +35,12 @@ class RecipeDtoMapper: DomainMapper<RecipeDto, Recipe> {
             dateUpdated = domainModel.dateUpdated,
         )
     }
-    fun toDomainList(initial: List<RecipeDto>): List<Recipe>{
+
+    fun toDomainList(initial: List<RecipeDto>): List<Recipe> {
         return initial.map { mapToDomainModel(it) }
     }
 
-    fun fromDomainList(initial: List<Recipe>): List<RecipeDto>{
+    fun fromDomainList(initial: List<Recipe>): List<RecipeDto> {
         return initial.map { mapFromDomainModel(it) }
     }
 }

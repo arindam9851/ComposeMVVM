@@ -26,7 +26,7 @@ fun loadPicture(url: String, @DrawableRes defaultImage: Int): MutableState<Bitma
         .asBitmap()
         .load(defaultImage)
         .into(object : CustomTarget<Bitmap>() {
-            override fun onLoadCleared(placeholder: Drawable?) { }
+            override fun onLoadCleared(placeholder: Drawable?) {}
             override fun onResourceReady(
                 resource: Bitmap,
                 transition: Transition<in Bitmap>?
@@ -40,7 +40,7 @@ fun loadPicture(url: String, @DrawableRes defaultImage: Int): MutableState<Bitma
         .asBitmap()
         .load(url)
         .into(object : CustomTarget<Bitmap>() {
-            override fun onLoadCleared(placeholder: Drawable?) { }
+            override fun onLoadCleared(placeholder: Drawable?) {}
             override fun onResourceReady(
                 resource: Bitmap,
                 transition: Transition<in Bitmap>?
@@ -53,7 +53,6 @@ fun loadPicture(url: String, @DrawableRes defaultImage: Int): MutableState<Bitma
 }
 
 
-
 @ExperimentalCoroutinesApi
 @Composable
 fun loadPicture(@DrawableRes drawable: Int): MutableState<Bitmap?> {
@@ -64,7 +63,7 @@ fun loadPicture(@DrawableRes drawable: Int): MutableState<Bitmap?> {
         .asBitmap()
         .load(drawable)
         .into(object : CustomTarget<Bitmap>() {
-            override fun onLoadCleared(placeholder: Drawable?) { }
+            override fun onLoadCleared(placeholder: Drawable?) {}
             override fun onResourceReady(
                 resource: Bitmap,
                 transition: Transition<in Bitmap>?

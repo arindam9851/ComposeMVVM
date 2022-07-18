@@ -9,7 +9,7 @@ class BaseApplication : Application() {
     // should be saved in data store
     val isDark = mutableStateOf(false)
 
-    fun toggleLightTheme(){
+    fun toggleLightTheme() {
         isDark.value = !isDark.value
     }
 }
