@@ -1,4 +1,3 @@
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -50,12 +49,12 @@ fun AppTheme(
         colors = if (darkTheme) DarkThemeColors else LightThemeColors,
         typography = QuickSandTypography,
         shapes = AppShapes
-    ){
+    ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(color = if(!darkTheme) Grey1 else Color.Black)
-        ){
+                .background(color = if (!darkTheme) Grey1 else Color.Black)
+        ) {
             content()
             CircularIndeterminateProgressBar(isDisplayed = displayProgressBar, 0.3f)
             DefaultSnackbar(

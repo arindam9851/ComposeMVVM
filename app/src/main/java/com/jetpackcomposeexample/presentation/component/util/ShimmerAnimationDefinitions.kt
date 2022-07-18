@@ -28,7 +28,7 @@ class ShimmerAnimationDefinitions(
             this[yShimmerPropKey] = 0f
         }
         state(AnimationState.END) {
-            this[xShimmerPropKey] =  widthPx + gradientWidth
+            this[xShimmerPropKey] = widthPx + gradientWidth
             this[yShimmerPropKey] = heightPx + gradientWidth
         }
 

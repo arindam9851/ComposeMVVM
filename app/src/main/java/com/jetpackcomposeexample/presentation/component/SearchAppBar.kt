@@ -28,21 +28,19 @@ fun SearchAppBar(
     scrollPosition: Float,
     onChangeScrollPosition: (Float) -> Unit,
     onToggleTheme: () -> Unit,
-){
+) {
     Surface(
         modifier = Modifier
-            .fillMaxWidth()
-        ,
+            .fillMaxWidth(),
         color = MaterialTheme.colors.secondary,
         elevation = 8.dp,
-    ){
-        Column{
-            Row(modifier = Modifier.fillMaxWidth()){
+    ) {
+        Column {
+            Row(modifier = Modifier.fillMaxWidth()) {
                 TextField(
                     modifier = Modifier
                         .fillMaxWidth(.9f)
-                        .padding(8.dp)
-                    ,
+                        .padding(8.dp),
                     value = query,
                     onValueChange = {
                         onQueryChanged(it)
@@ -76,9 +74,8 @@ fun SearchAppBar(
                                 end.linkTo(parent.end)
                                 linkTo(top = parent.top, bottom = parent.bottom)
                             },
-                        onClick = onToggleTheme
-                        ,
-                    ){
+                        onClick = onToggleTheme,
+                    ) {
                         Icon(Icons.Filled.MoreVert)
                     }
                 }
@@ -86,15 +83,14 @@ fun SearchAppBar(
             val scrollState = rememberScrollState()
             ScrollableRow(
                 modifier = Modifier
-                    .padding(start = 8.dp, bottom = 8.dp)
-                ,
+                    .padding(start = 8.dp, bottom = 8.dp),
                 scrollState = scrollState,
             ) {
 
                 // restore scroll position after rotation
                 scrollState.scrollTo(scrollPosition)
 
-                for(category in categories){
+                for (category in categories) {
                     FoodCategoryChip(
                         category = category.value,
                         isSelected = selectedCategory == category,

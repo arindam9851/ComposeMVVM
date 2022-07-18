@@ -5,15 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.ui.platform.ComposeView
-
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.jetpackcomposeexample.presentation.BaseApplication
 import com.jetpackcomposeexample.presentation.component.RecipeList
@@ -33,7 +31,6 @@ class RecipeListFragment : Fragment() {
     private val snackbarController = SnackbarController(lifecycleScope)
 
     private val viewModel: RecipeListViewModel by viewModels()
-
 
 
     override fun onCreateView(
@@ -59,14 +56,14 @@ class RecipeListFragment : Fragment() {
                     displayProgressBar = loading,
                     scaffoldState = scaffoldState,
                     darkTheme = application.isDark.value,
-                ){
+                ) {
                     Scaffold(
                         topBar = {
                             SearchAppBar(
                                 query = query,
                                 onQueryChanged = viewModel::onQueryChanged,
                                 onExecuteSearch = {
-                                    if (viewModel.selectedCategory.value?.value == "Milk"){
+                                    if (viewModel.selectedCategory.value?.value == "Milk") {
                                         snackbarController.getScope().launch {
                                             snackbarController.showSnackbar(
                                                 scaffoldState = scaffoldState,
@@ -74,8 +71,7 @@ class RecipeListFragment : Fragment() {
                                                 actionLabel = "Hide"
                                             )
                                         }
-                                    }
-                                    else{
+                                    } else {
                                         viewModel.onTriggerEvent(RecipeListEvent.NewSearchEvent)
                                     }
                                 },
@@ -98,7 +94,7 @@ class RecipeListFragment : Fragment() {
                             recipes = recipes,
                             onChangeScrollPosition = viewModel::onChangeRecipeScrollPosition,
                             page = page,
-                            onTriggerNextPage = {viewModel.onTriggerEvent(RecipeListEvent.NextPageEvent)},
+                            onTriggerNextPage = { viewModel.onTriggerEvent(RecipeListEvent.NextPageEvent) },
                             navController = findNavController(),
                             scaffoldState = scaffoldState,
                             snackbarController = snackbarController,

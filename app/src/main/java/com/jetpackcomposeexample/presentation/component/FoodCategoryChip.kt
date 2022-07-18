@@ -17,12 +17,12 @@ fun FoodCategoryChip(
     isSelected: Boolean = false,
     onSelectedCategoryChanged: (String) -> Unit,
     onExecuteSearch: () -> Unit,
-){
+) {
     Surface(
         modifier = Modifier.padding(end = 8.dp),
         elevation = 8.dp,
         shape = MaterialTheme.shapes.medium,
-        color = if(isSelected) Color.LightGray else MaterialTheme.colors.primary
+        color = if (isSelected) Color.LightGray else MaterialTheme.colors.primary
     ) {
         Row(modifier = Modifier
             .toggleable(

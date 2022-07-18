@@ -17,14 +17,14 @@ import com.jetpackcomposeexample.presentation.component.util.ShimmerAnimationDef
 fun LoadingRecipeListShimmer(
     imageHeight: Dp,
     padding: Dp = 16.dp
-){
+) {
     WithConstraints(
         modifier = Modifier.fillMaxSize()
     ) {
-        val cardWidthPx = with(AmbientDensity.current) { (maxWidth - (padding*2)).toPx() }
+        val cardWidthPx = with(AmbientDensity.current) { (maxWidth - (padding * 2)).toPx() }
         val cardHeightPx = with(AmbientDensity.current) { (imageHeight - padding).toPx() }
 
-        val cardAnimationDefinition = remember{
+        val cardAnimationDefinition = remember {
             ShimmerAnimationDefinitions(
                 widthPx = cardWidthPx,
                 heightPx = cardHeightPx,
@@ -46,7 +46,7 @@ fun LoadingRecipeListShimmer(
         val yCardShimmer = cardShimmerTranslateAnim[cardAnimationDefinition.yShimmerPropKey]
 
         ScrollableColumn {
-            repeat(5){
+            repeat(5) {
                 ShimmerRecipeCardItem(
                     colors = colors,
                     xShimmer = xCardShimmer,

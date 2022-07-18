@@ -30,12 +30,13 @@ fun RecipeList(
     navController: NavController,
     scaffoldState: ScaffoldState,
     snackbarController: SnackbarController,
-){
-    Box(modifier = Modifier
-        .background(color = MaterialTheme.colors.surface)
+) {
+    Box(
+        modifier = Modifier
+            .background(color = MaterialTheme.colors.surface)
     ) {
         if (loading && recipes.isEmpty()) {
-            LoadingRecipeListShimmer(imageHeight = 250.dp,)
+            LoadingRecipeListShimmer(imageHeight = 250.dp)
         } else {
             LazyColumn {
                 itemsIndexed(
@@ -48,12 +49,11 @@ fun RecipeList(
                     RecipeCard(
                         recipe = recipe,
                         onClick = {
-                            if(recipe.id != null){
+                            if (recipe.id != null) {
                                 val bundle = Bundle()
                                 bundle.putInt("recipeId", recipe.id)
                                 navController.navigate(R.id.view_recipe, bundle)
-                            }
-                            else{
+                            } else {
                                 snackbarController.getScope().launch {
                                     snackbarController.showSnackbar(
                                         scaffoldState = scaffoldState,

@@ -22,7 +22,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 fun RecipeCard(
     recipe: Recipe,
     onClick: () -> Unit,
-){
+) {
     Card(
         shape = MaterialTheme.shapes.small,
         modifier = Modifier
@@ -52,14 +52,13 @@ fun RecipeCard(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top=12.dp, bottom=12.dp, start = 8.dp, end=8.dp)
-                ){
+                        .padding(top = 12.dp, bottom = 12.dp, start = 8.dp, end = 8.dp)
+                ) {
                     Text(
                         text = title,
                         modifier = Modifier
                             .fillMaxWidth(0.85f)
-                            .wrapContentWidth(Alignment.Start)
-                        ,
+                            .wrapContentWidth(Alignment.Start),
                         style = MaterialTheme.typography.h3
                     )
                     val rank = recipe.rating.toString()
@@ -68,8 +67,7 @@ fun RecipeCard(
                         modifier = Modifier
                             .fillMaxWidth()
                             .wrapContentWidth(Alignment.End)
-                            .align(Alignment.CenterVertically)
-                        ,
+                            .align(Alignment.CenterVertically),
                         style = MaterialTheme.typography.h5
                     )
                 }

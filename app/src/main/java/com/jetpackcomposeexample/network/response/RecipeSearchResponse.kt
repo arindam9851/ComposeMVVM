@@ -3,7 +3,7 @@ package com.jetpackcomposeexample.network.response
 import com.google.gson.annotations.SerializedName
 import com.jetpackcomposeexample.network.model.RecipeDto
 
-data class RecipeSearchResponse (
+data class RecipeSearchResponse(
     @SerializedName("count")
     var count: Int,
 

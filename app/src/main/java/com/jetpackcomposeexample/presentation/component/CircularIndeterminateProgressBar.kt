@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
  */
 
 
-
 @Composable
 fun CircularIndeterminateProgressBar(isDisplayed: Boolean, verticalBias: Float) {
     if (isDisplayed) {

@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 class SnackbarController
 constructor(
     private val scope: CoroutineScope
-){
+) {
 
     private var snackbarJob: Job? = null
 
@@ -35,8 +35,8 @@ constructor(
         scaffoldState: ScaffoldState,
         message: String,
         actionLabel: String
-    ){
-        if(snackbarJob == null){
+    ) {
+        if (snackbarJob == null) {
             snackbarJob = scope.launch {
                 scaffoldState.snackbarHostState.showSnackbar(
                     message = message,
@@ -44,8 +44,7 @@ constructor(
                 )
                 cancelActiveJob()
             }
-        }
-        else{
+        } else {
             cancelActiveJob()
             snackbarJob = scope.launch {
                 scaffoldState.snackbarHostState.showSnackbar(
@@ -57,7 +56,7 @@ constructor(
         }
     }
 
-    private fun cancelActiveJob(){
+    private fun cancelActiveJob() {
         snackbarJob?.let { job ->
             job.cancel()
             snackbarJob = Job()
